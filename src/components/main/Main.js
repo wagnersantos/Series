@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Series from '../../components/series/Series';
-import SingleSeries from '../../components/SingleSeries';
+import SingleSeries from '../../components/singleSeries/SingleSeries';
 
 const Main = (props) => (
 	<Switch>
