@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SeriesData from '../../services/seriesData/SeriesData';
 import SeriesList from '../../components/seriesList/SeriesList';
 import Intro from '../../components/intro/Intro';
+import Loader from '../../components/loader/Loader';
 
 class Series extends Component{
 	constructor(props){
@@ -38,7 +39,7 @@ class Series extends Component{
 					<p>Não há series com esse nome</p>
 				}
 				{
-					isFetching && 'loading...'
+					isFetching && <Loader />
 				}
 				{
 					!isFetching && <SeriesList list={this.state.series}/>
