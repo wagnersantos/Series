@@ -20,6 +20,9 @@ class Series extends Component{
 		const {series,seriesName} = this.state;
 		return (
 			<div>
+				<div>
+					<Intro message ='Informações sobre séries'/>
+				</div>
 				<input type='text' placeholder ='Digite uma série' value={seriesName} 
 					onChange={this.onSeriesInputChange} />	
 				<SeriesList list={this.state.series}/>	
