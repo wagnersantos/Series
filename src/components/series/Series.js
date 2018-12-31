@@ -22,11 +22,12 @@ class Series extends Component{
 	render(){
 		const {series,seriesName,isFetching} = this.state;
 		return (
-			<div>
+			<div className='container '>
 			    <Intro message ='Informações sobre séries'/>
-				<div>
-					<input value={seriesName} type='text' placeholder='Digite aqui. Ex: flash' 
-						onChange={this.onSeriesInputChange} />
+				<div className='mb-3'>
+					<input className='form-control' value={seriesName} type='text' 
+						placeholder='Digite aqui. Ex: flash' onChange={this.onSeriesInputChange} 
+						style={{maxWidth: 500, margin: '0 auto'}}/>
 				</div>
 				{
 					!isFetching && series.length === 0 && seriesName.trim() === ''
@@ -36,7 +37,7 @@ class Series extends Component{
 				{
 					!isFetching && series.length === 0 && seriesName.trim() !== ''
 					&&
-					<p>Não há series com esse nome</p>
+					<p >Não há series com esse nome</p>
 				}
 				{
 					isFetching && <Loader />

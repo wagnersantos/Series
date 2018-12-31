@@ -5,14 +5,14 @@ import {Link} from 'react-router-dom';
 const ButtonBack = ({series}) => (
 	<Link to={'/'}>
 		<div>
-			<p>Voltar</p>
+			<input type='button' className='btn btn-dark' value='Voltar' />
 		</div>
 	</Link>
 );
 
 const SingleSeriesInfo = ({show}) => {
 	return (
-		<div>
+		<div className='container'>
 			{
 				show === null && <Loader />
 			}
@@ -21,17 +21,22 @@ const SingleSeriesInfo = ({show}) => {
 				&& 
 				<div>
 					<div>
-						<p>{show.name}</p>
+						<p className='font-weight-bold' style={{fontSize: 20}}>{show.name}</p>
 						<p>Lançamento - {new Date(show.premiered).toLocaleDateString()}</p>
 						<p>Pontuação - {show.rating.average}</p>
 						<p>Episódios - {show._embedded.episodes.length}</p>
 						<p>Temporadas - {show._embedded.episodes[show._embedded.episodes.length-1]
 							.season}</p>
 						<p>
-							<img alt='show' src={show.image.medium} />
+							<img className='border shadow border-dark rounded' alt='show' 
+								src={show.image.medium} />
 						</p>
-						<p dangerouslySetInnerHTML={{__html: 
-	        				show.summary}}></p>
+						<div className='card  border-0'>
+							 <div className='card-body'>
+								<p className='text-justify' dangerouslySetInnerHTML={{__html: 
+	        						show.summary}}></p>
+	        				</div>
+	        			</div>
 					</div>
 					<ButtonBack />
 				</div>
