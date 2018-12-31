@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 
 class Series extends Component{
-	
+	constructor(props){
+		super(props);
+		this.state ={
+			series: []
+		}
+	}	
 	render(){
 		return (
 			<div>
