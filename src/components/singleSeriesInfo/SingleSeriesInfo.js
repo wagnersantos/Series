@@ -1,16 +1,7 @@
 import React, {Component} from 'react';
 import Loader from '../../components/loader/Loader';
-import {Link} from 'react-router-dom';
 import Translate from '../../services/translate/Translate';
-
-const ButtonBack = ({series}) => (
-	<Link to={'/'}>
-		<div>
-			<input type='button' className='btn btn-dark' value='Voltar' />
-		</div>
-	</Link>
-);
-
+import ButtonBack from '../../components/buttonBack/ButtonBack';
 
 class SingleSeriesInfo extends Component{
 	constructor(props){
