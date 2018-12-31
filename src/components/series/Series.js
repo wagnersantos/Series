@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SeriesData from '../../services/seriesData/SeriesData';
 
 class Series extends Component{
 	constructor(props){
@@ -11,6 +12,9 @@ class Series extends Component{
 	}
 	onSeriesInputChange(e){
 		this.setState({seriesName: e.target.value});
+		SeriesData.getSeriesByName(e.target.value)
+			.then(response => response.json())
+      		.then(json => this.setState({series: json}));
 	}	
 	render(){
 		const {series,seriesName} = this.state;
