@@ -7,6 +7,9 @@ class SingleSeries extends Component {
 			show: null
 		}
 	}
+	componentDidMount(){
+		
+	}
 	render(){
 		return (
 			
