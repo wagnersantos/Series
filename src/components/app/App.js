@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Intro from '../../components/intro/Intro';
+import Series from '../../components/series/Series';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <h1 className='App-title'>Séries</h1>
         </header>
         <Intro message ='Informações sobre séries'/>
+        <Series />
       </div>
     );
   }
