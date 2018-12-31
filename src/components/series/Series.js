@@ -25,7 +25,8 @@ class Series extends Component{
 			<div>
 			    <Intro message ='Informações sobre séries'/>
 				<div>
-					<input value={seriesName} type='text' onChange={this.onSeriesInputChange} />
+					<input value={seriesName} type='text' placeholder='Digite aqui. Ex: flash' 
+						onChange={this.onSeriesInputChange} />
 				</div>
 				{
 					!isFetching && series.length === 0 && seriesName.trim() === ''
