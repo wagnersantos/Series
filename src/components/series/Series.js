@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import SeriesData from '../../services/seriesData/SeriesData';
 import SeriesList from '../../components/seriesList/SeriesList';
 import Intro from '../../components/intro/Intro';
 import Loader from '../../components/loader/Loader';
