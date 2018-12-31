@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SeriesData from '../../services/seriesData/SeriesData';
-
+import SeriesList from '../../components/seriesList/SeriesList';
 class Series extends Component{
 	constructor(props){
 		super(props);
@@ -21,7 +21,8 @@ class Series extends Component{
 		return (
 			<div>
 				<input type='text' placeholder ='Digite uma série' value={seriesName} 
-					onChange={this.onSeriesInputChange} />		
+					onChange={this.onSeriesInputChange} />	
+				<SeriesList list={this.state.series}/>	
 			</div>
 		)
 	}
