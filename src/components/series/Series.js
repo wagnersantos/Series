@@ -19,6 +19,11 @@ class Series extends Component{
 		SeriesData.getSeriesByName(e.target.value)
       		.then(response => response.json())
       		.then(json => this.setState({series: json, isFetching: false}));
+	    if(e.target.value === ''){
+	    	document.getElementsByTagName('footer')[0].style.position = 'absolute';	
+      	}else{
+      		document.getElementsByTagName('footer')[0].style.position = 'relative';	
+      	}
 	}
 	render(){
 		const {series,seriesName,isFetching} = this.state;
