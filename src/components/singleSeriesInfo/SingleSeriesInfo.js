@@ -7,14 +7,24 @@ class SingleSeriesInfo extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			summary: ''
+			summary: '',
+			hasError: false
 		}
 
 	}
 	getSummary(text){
-		Translate.getTranslator(text.replace('<p>','').replace('</p>',''))
-			.then(response => response.json())
-      		.then(json => this.setState({summary: json.text}));
+		if(!this.state.hasError){
+			Translate.getTranslator(text.replace(/<[^>]*>/g, ''))
+				.then(response => {
+					if(response.status !== 200){
+						response.json().then(data => console.log(data.message))
+						this.setState({summary: text.replace(/<[^>]*>/g, '')});
+						this.setState({hasError: true});
+					}else{
+						response.json().then(json => this.setState({summary: json.text}));
+					}
+				})
+      	}
 
       	return this.state.summary;
 	}
