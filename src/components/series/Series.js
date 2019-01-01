@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SeriesList from '../../components/seriesList/SeriesList';
+import SeriesData from '../../services/seriesData/SeriesData';
 import Intro from '../../components/intro/Intro';
 import Loader from '../../components/loader/Loader';
 
@@ -15,7 +16,7 @@ class Series extends Component{
 	}
 	onSeriesInputChange(e){
 		this.setState({seriesName: e.target.value, isFetching: true});
-		fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
+		SeriesData.getSeriesById(this.props)
       		.then(response => response.json())
       		.then(json => this.setState({series: json, isFetching: false}));
 	}
