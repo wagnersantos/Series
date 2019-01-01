@@ -16,7 +16,7 @@ class Series extends Component{
 	}
 	onSeriesInputChange(e){
 		this.setState({seriesName: e.target.value, isFetching: true});
-		SeriesData.getSeriesById(this.props)
+		SeriesData.getSeriesByName(this.props)
       		.then(response => response.json())
       		.then(json => this.setState({series: json, isFetching: false}));
 	}
