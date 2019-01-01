@@ -49,7 +49,7 @@ class SingleSeriesInfo extends Component{
 								.season}</p>
 							<p>
 								<img className='border shadow border-dark rounded' alt='show' 
-									src={show.image.medium} />
+									src={show.image.medium.replace('http','https')} />
 							</p>
 							<div className='card  border-0'>
 								 <div className='card-body'>
